@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>College Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background: #968b8b;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: #052548;
+            max-width: 400px;
+            margin: auto;
+            color: #052548;
+        }
+
+        input, select, button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #052548;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Inter-Collegiate Registration</h2>
+        <form id="regForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="text" id="college" placeholder="College Name" required>
+            <input type="tel" id="phone_no" placeholder="Mobile Number" required>
+
+            <select id="event" required>
+                <option value="">Select Event</option>
+                <option value="Coding">Coding</option>
+                <option value="Quiz">Quiz</option>
+                <option value="Debate">Debate</option>
+            </select>
+            <button type="button" onclick="submitForm()">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function submitForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const college = document.getElementById("college").value;
+            const phone_no = document.getElementById("phone_no").value;
+            const event = document.getElementById("event").value;
+
+            if (name && email && college && event) {
+                alert("Registration Successful!");
+            } else {
+                alert("Please fill all fields!");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
